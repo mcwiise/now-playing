@@ -1,0 +1,14 @@
+{
+  "name": "now-playing",
+  "version": "1.0.0",
+  "description": "now playing challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Germán Valencia",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
