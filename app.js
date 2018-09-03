@@ -1,9 +1,10 @@
-var express = require("express");
-var app = express();
-var router = require("./router");
+const express = require("express");
+const app = express();
+const router = require("./router");
 
 router(app);
+app.set('view engine', 'ejs');
 
-var server = app.listen(3000, function () {
+const server = app.listen(3000, function () {
     console.log("Welcome to now playing!: ", server.address().port);
 });
