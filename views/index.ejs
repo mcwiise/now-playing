@@ -16,17 +16,17 @@
         <h1 class="title">
           Now playing in San Francisco!
         </h1>
-        <spacer type="horizontal" size="20"></spacer>
+        <span></span>
         <h2 class="subtitle">
           This page shows #nowplaying tweets in San Francisco that contain a youtube link. It also allows you to post a tweet with
           a Youtube link.
         </h2>
-        <form action="/" method="post">
+        <form action="/index/tweet" method="post">
           <div class="field is-horizontal">
             <div class="field-body">
               <div class="field">
                 <p class="control is-expanded has-icons-left">
-                  <input class="input" type="text" placeholder="Video URL" required>
+                  <input id="video-url" name="video-url" class="input" type="text" placeholder="Video URL" required>
                   <span class="icon is-small is-left">
                     <i class="fab fa-youtube"></i>
                   </span>
@@ -34,7 +34,7 @@
               </div>
               <div class="field">
                 <p class="control is-expanded has-icons-left">
-                  <input class="input is-success" type="text" placeholder="Type your comment..." required>
+                  <input id="comments" name="comments" class="input is-success" type="text" placeholder="Type your comment..." required>
                   <span class="icon is-small is-left">
                     <i class="fas fa-comments"></i>
                   </span>
