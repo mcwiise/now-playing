@@ -26,7 +26,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control is-expanded has-icons-left">
-                  <input id="video-url" name="video-url" class="input" type="text" placeholder="Video URL" required>
+                  <input id="videourl" name="videourl" class="input" type="text" placeholder="Video URL" required>
                   <span class="icon is-small is-left">
                     <i class="fab fa-youtube"></i>
                   </span>
@@ -42,17 +42,61 @@
               </div>
               <div class="field">
                 <p class="control is-expanded has-icons-left">
-                  <button class="button is-link is-rigth">&nbsp;&nbsp;&nbsp;&nbsp;Tweet to #nowplaying</button>
+                  <button id="test" class="button is-link is-rigth">&nbsp;&nbsp;&nbsp;&nbsp;Tweet to #nowplaying</button>
                   <span class="icon is-small is-left has-text-white">
-                      <i class="fab fa-twitter"></i>
-                    </span>
-                  </p>
+                    <i class="fab fa-twitter"></i>
+                  </span>
                 </p>
+                </p>
+              </div>
             </div>
-          </div>
         </form>
+        </div>
       </div>
-    </div>
+  </section>
+  <section>
+      <% tweets.forEach(function(tweet) { %>
+        <div class="box container">
+            <article class="media">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                  <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                </figure>
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong><%=tweet.user.name%></strong>&nbsp;&commat;<%=tweet.user.account%>
+                    <br>
+                    <%=tweet.text%>
+                  </p>
+                </div>
+                <nav class="level is-mobile">
+                    <div class="level-left">
+                      <a class="level-item" aria-label="reply">
+                        <span class="icon is-small">
+                          <i class="fas fa-reply" aria-hidden="true"></i>
+                        </span>
+                        &nbsp;Reply
+                      </a>
+                      <a class="level-item" aria-label="retweet">
+                        <span class="icon is-small">
+                          <i class="fas fa-retweet" aria-hidden="true"></i>
+                        </span>
+                        &nbsp;Retweet
+                      </a>
+                      <a class="level-item" aria-label="like">
+                        <span class="icon is-small">
+                          <i class="fas fa-star" aria-hidden="true"></i>
+                        </span>
+                        &nbsp;Favorite
+                      </a>
+                    </div>
+                  </nav>
+              </div>
+            </article>
+          </div>
+      <% }); %>
   </section>
 </body>
 
