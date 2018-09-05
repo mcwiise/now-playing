@@ -1,5 +1,8 @@
 const service = require("./service");
 const Promise = require("bluebird");
+const getUrls = require("get-urls");
+const getVideoId = require("get-video-id");
+
 const nowplaying = "#nowplaying";
 
 exports.createTweet = function (message) {
@@ -34,8 +37,16 @@ exports.retrieveTweetsWithUser = function (statuses) {
                 if (error) {
                     reject(error);
                 } else {
+                    let urls = getUrls(status.text);
+                    let videoid = "";
+                    urls.forEach(url => {
+                        if(videoid == ""){
+                            videoid = getVideoId(url);
+                        }
+                    });
                     let tweet = { 
-                        text: status.text, 
+                        text: status.text,
+                        videoid: videoid,
                         user: { 
                             name: user.name, 
                             account: user.screen_name,
