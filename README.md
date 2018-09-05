@@ -19,6 +19,11 @@ $ nvm use stable
 
 - Run app by: `node app.js`
 
-## Deploy
+## Unit Tests
 
-In progress......
+We are using mocha and chai to build unit test suite. To run test suite:
+
+```
+$ nvm use stable
+$ npm test
+```

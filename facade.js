@@ -1,5 +1,5 @@
-var service = require("./service");
-var Promise = require("bluebird");
+const service = require("./service");
+const Promise = require("bluebird");
 const nowplaying = "#nowplaying";
 
 exports.createTweet = function (message) {
