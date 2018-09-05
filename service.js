@@ -8,11 +8,33 @@ let client = new Twitter({
     access_token_secret: config.ENV.ACCESS_TOKEN_SECRET
 });
 
-exports.postTweet = function(message){
-    let tweet = message + " " + config.SIGNATURE.HASHTAG;
-    return client.post(config.SIGNATURE.STATUSES_UPDATE, {status: tweet});
+exports.postTweet = function(message, callback){
+    let tweet = message;
+    client.post(config.SIGNATURE.STATUSES_UPDATE, {status: tweet}, function(error, tweet, response){
+        if(error){
+            return callback(undefined, error);
+        } else {
+            return callback(tweet, undefined);
+        }
+    });
 }
 
-exports.getNowPlaying = function(){
-    return client.get(config.SIGNATURE.SEARCH, {q: config.SIGNATURE.HASHTAG, count: 5, result_type: "recent"});
+exports.getByHashtag = function(hashtag, callback){
+    client.get(config.SIGNATURE.SEARCH, {q: hashtag, count: 5, result_type: "recent"}, function(error, tweets, response){
+        if(error){
+            return callback(undefined, error);
+        } else {
+            return callback(tweets, undefined);
+        }
+    });
+}
+
+exports.getUserByScreenName = function(sname, callback){
+    client.get(config.SIGNATURE.USERS, {screen_name: sname}, function(error, user, response){
+        if(error){
+            return callback(undefined, error);
+        } else {
+            return callback(user, undefined);
+        }
+    });
 }

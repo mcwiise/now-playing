@@ -8,5 +8,5 @@ exports.ENV = Object.freeze({
 exports.SIGNATURE = Object.freeze({
     STATUSES_UPDATE: "statuses/update",
     SEARCH: "search/tweets",
-    HASHTAG: "#nowplaying"
+    USERS: "users/show"
 });
