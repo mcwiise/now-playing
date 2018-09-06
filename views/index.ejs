@@ -59,6 +59,14 @@
       <%- include("tlog", {tweets: tweets}); %>
     </div>
   </section>
+  <div class="modal <%=error%>">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="notification is-danger is-small">
+        It was not possible to retrieve tweets, Try again later!!
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
 </body>
-
 </html>

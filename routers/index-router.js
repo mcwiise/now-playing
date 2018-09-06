@@ -11,9 +11,9 @@ irouter.get("/index", function (req, res) {
     facade.retrieveNowPlayingTweets().then(response => {
         return Promise.all(facade.retrieveTweetsWithUser(response.statuses));
     }).then(resolves => {
-        res.render("index", { tweets: resolves });
+        res.render("index", { tweets: resolves, error: "" });
     }).catch(error => {
-        console.log("error");
+        res.render("index", { tweets: [], error: "is-active" });
     });
 });
 
@@ -23,7 +23,7 @@ irouter.post("/index/tweet", function (req, res) {
         .then(response => {
             res.redirect("/");
         }).catch(error => {
-            console.log(error);
+            res.render("index", { tweets: [], error: "is-active" });
         });
 });
 
