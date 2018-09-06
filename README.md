@@ -25,6 +25,17 @@ This is a nodejs application splits in 3 modules: a router which will attend any
 
 Additionaly, it was necessary to use a framework to speed up the css development. So the application uses [bulma](https://bulma.io/) which is a pure CSS framework with a set of classes to build user interface components.
 
+## Get Started
+
+- Please configure the following env variables providing the proper authentication values, in your local machine
+
+```
+$TWITTER_CONSUMER_KEY
+$TWITTER_CONSUMER_SECRET
+$TWITTER_ACCESS_TOKEN
+$TWITTER_ACCESS_TOKEN_SECRET
+```
+
 ## Contribute
 
 - Install nvm following instructions on: https://github.com/creationix/nvm
